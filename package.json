@@ -1,0 +1,41 @@
+{
+  "name": "typewriter",
+  "version": "0.0.0",
+  "description": "TypeScript -> Flow Converter",
+  "license": "MIT",
+  "repository": "dawsbot/typewriter",
+  "author": {
+    "name": "Dawson Botsford",
+    "email": "DawsonBotsford@gmail.com",
+    "url": "https://dawsbot.com"
+  },
+  "bin": "src/cli.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    ""
+  ],
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "figures": "^2.0.0",
+    "globby": "^7.1.1",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "temp-dir-cp": "^1.0.1",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "space": true
+  }
+}
