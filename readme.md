@@ -10,8 +10,8 @@
   <a href="https://travis-ci.org/dawsbot/typewriter">
     <img src="https://travis-ci.org/dawsbot/typewriter.svg?branch=master">
   </a>
-  <a href="https://www.npmjs.com/package/skrub-cli">
-    <img src="https://img.shields.io/npm/v/skrub-cli.svg">
+  <a href="https://www.npmjs.com/package/tw-cli">
+    <img src="https://img.shields.io/npm/v/tw-cli.svg">
   </a>
 
 </p>
@@ -59,7 +59,7 @@ $ typewriter src index.tsx
 
 - [x] Interface -> type
 ```
-  "interface Prop {}"" -> "type Prop = {}"
+  "interface Prop {}" -> "type Prop = {}"
 ```
 
 #### Soon But Not Yet
