@@ -9,7 +9,9 @@
     "email": "DawsonBotsford@gmail.com",
     "url": "https://dawsbot.com"
   },
-  "bin": "src/cli.js",
+  "bin": {
+    "typewriter": "src/cli.js"
+  },
   "engines": {
     "node": ">=4"
   },
