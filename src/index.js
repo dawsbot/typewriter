@@ -11,9 +11,12 @@ const helpers = require('./helpers');
 const convertFile = fileName => {
   const fileContent = fs.readFileSync(fileName);
 
-  const newFileContent = helpers.removePrivatePublic(
-    helpers.addFlowHeader(fileContent)
-  );
+  const newFileContent =
+    helpers.replaceInterfaceDeclaration(
+      helpers.removePrivatePublic(
+        helpers.addFlowHeader(fileContent)
+      )
+    );
 
   const newFileName = helpers.renameFile(fileName);
 
