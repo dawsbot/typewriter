@@ -17,3 +17,9 @@ test('remove all private public ', t => {
   t.is(helpers.removePrivatePublic('public render()'), 'render()');
   t.is(helpers.removePrivatePublic('private helper()'), 'helper()');
 });
+
+test('interface declaration', t => {
+  t.is(helpers.replaceInterfaceDeclaration('interface Props {content}'), 'type Props = {content}');
+  t.is(helpers.replaceInterfaceDeclaration('interface Props { content }'), 'type Props = { content }');
+  t.is(helpers.replaceInterfaceDeclaration('interface 1Props {content}'), 'type 1Props = {content}');
+});

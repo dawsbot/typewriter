@@ -13,6 +13,7 @@ $ npm install --global tw-cli
 ```
 
 ## Usage
+
 ```
 $ typewriter index.tsx
 ✔ Converted index.tsx -> index.jsx
@@ -29,30 +30,34 @@ $ typewriter src index.tsx
 
 ## Feature Tracker
 
+### Ready To Use
+
 - [x] Rename files from `.ts` -> `.js` & `.tsx` -> `.jsx`
-- [x] Add flow header directive to matching files <sup>1</sup>
-- [x] Strip `public` and `private` directives
+- [x] Add flow keyword quote (`// @flow`)
+- [x] Strip `public` and `private` keywords
+- [x] Interface -> type
+
+### Soon But Not Yet
+
 - [ ] Convert function argument syntax from TS -> Flow
 - [ ] Convert interface definitions from TS -> Flow
 
-[1] - "matching files": all `.ts` and `.tsx` files
 
 ## More Help
 
 ```
 $ typewriter --help
-
-	Usage
-	  $ typewriter [file path]
-
-	Examples
-    $ typewriter a.tsx
-    ✔ Converted a.tsx -> a.jsx
-
-    $ typewriter dir
-    ✔ Converted dir/a.tsx -> dir/a.jsx
-    ✔ Converted dir/b.ts -> dir/b.js
 ```
+
+## Support Development
+
+The work done for this project is free. If you save time with TypeWriter, consider making a [donation](https://liberapay.com/DawsBot).
+
+Are Bitcoin (BTC) donations more your style?
+
+14xAeqDucUpRZkSDQrHCXaKsWmNPeqaB5q
+
+<img src="./media/bitcoin-wallet.png" title="typewriter" width="100px"/>
 
 ## License
 
