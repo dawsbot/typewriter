@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./media/typewriter.jpg" title="typewriter" width="700px"/>
+  <img src="./media/typewriter.jpg" title="typewriter"/>
 
 
   <br/>
