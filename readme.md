@@ -31,6 +31,7 @@ $ typewriter src index.tsx
 
 - [x] Rename files from `.ts` -> `.js` & `.tsx` -> `.jsx`
 - [x] Add flow header directive to matching files <sup>1</sup>
+- [x] Strip `public` and `private` directives
 - [ ] Convert function argument syntax from TS -> Flow
 - [ ] Convert interface definitions from TS -> Flow
 

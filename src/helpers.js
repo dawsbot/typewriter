@@ -10,7 +10,14 @@ const addFlowHeader = fileContents => {
   return `// @flow\n${fileContents}`;
 };
 
+const removePrivatePublic = fileContents => {
+  return fileContents
+    .replace('private ', '')
+    .replace('public ', '');
+};
+
 module.exports = {
   renameFile,
-  addFlowHeader
+  addFlowHeader,
+  removePrivatePublic
 };

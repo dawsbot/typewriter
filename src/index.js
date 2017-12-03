@@ -11,7 +11,10 @@ const helpers = require('./helpers');
 const convertFile = fileName => {
   const fileContent = fs.readFileSync(fileName);
 
-  const newFileContent = helpers.addFlowHeader(fileContent);
+  const newFileContent = helpers.removePrivatePublic(
+    helpers.addFlowHeader(fileContent)
+  );
+
   const newFileName = helpers.renameFile(fileName);
 
   fs.writeFileSync(newFileName, newFileContent, 'utf8');
