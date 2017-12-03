@@ -14,8 +14,8 @@ const addFlowHeader = fileContents => {
 // "public render()" -> "render()"
 const removePrivatePublic = fileContents => {
   return fileContents
-    .replace('private ', '')
-    .replace('public ', '');
+    .replace(new RegExp('private ', 'g'), '')
+    .replace(new RegExp('public ', 'g'), '')
 };
 
 // "interface Prop {}"" -> "type Prop = {}"

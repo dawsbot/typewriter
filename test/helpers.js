@@ -16,6 +16,9 @@ test('Add flow header to top of file', t => {
 test('remove all private public ', t => {
   t.is(helpers.removePrivatePublic('public render()'), 'render()');
   t.is(helpers.removePrivatePublic('private helper()'), 'helper()');
+
+  t.is(helpers.removePrivatePublic('private helper()\nprivate otherHelper()'), 'helper()\notherHelper()');
+  t.is(helpers.removePrivatePublic('public helper()\npublic otherHelper()'), 'helper()\notherHelper()');
 });
 
 test('interface declaration', t => {
