@@ -1,6 +1,6 @@
 {
   "name": "tw-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "TypeScript -> Flow Converter",
   "license": "MIT",
   "repository": "dawsbot/typewriter",
