@@ -30,14 +30,36 @@ $ typewriter src index.tsx
 
 ## Feature Tracker
 
-### Ready To Use
+#### Ready To Use
 
 - [x] Rename files from `.ts` -> `.js` & `.tsx` -> `.jsx`
+```
+  a.ts -> a.js
+  a.tsx -> a.jsx
+```
 - [x] Add flow keyword quote (`// @flow`)
-- [x] Strip `public` and `private` keywords
-- [x] Interface -> type
+```
+  "content" -> "// @flow\ncontent"
+```
 
-### Soon But Not Yet
+- [x] Strip `public` and `private` keywords
+```
+  "public render()" -> "render()"
+```
+
+- [x] Interface -> type
+```
+  "interface Prop {}"" -> "type Prop = {}"
+```
+
+#### Soon But Not Yet
+
+- [ ] Named imports
+
+```
+import { IStore, IUser } from '../../configureStore';
+  ^^^^^ Named import from module `../../configureStore`. `IUser` is a type, but not a value. In order to import it, please use `import type`.
+```
 
 - [ ] Convert function argument syntax from TS -> Flow
 - [ ] Convert interface definitions from TS -> Flow
