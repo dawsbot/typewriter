@@ -1,5 +1,5 @@
 {
-  "name": "typewriter",
+  "name": "tw-cli",
   "version": "0.0.1",
   "description": "TypeScript -> Flow Converter",
   "license": "MIT",

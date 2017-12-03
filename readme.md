@@ -9,7 +9,7 @@
 ## Install
 
 ```
-$ npm install --global typewriter
+$ npm install --global tw-cli
 ```
 
 ## Usage
