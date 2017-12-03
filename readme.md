@@ -1,9 +1,19 @@
-# typewriter [![Build Status](https://travis-ci.org/dawsbot/typewriter.svg?branch=master)](https://travis-ci.org/dawsbot/typewriter)
-
-> TypeScript -> Flow Converter for tsx and ts files
-
 <p align="center">
-  <img src="./media/typewriter.jpg" title="typewriter" width="400px"/>
+  <img src="./media/typewriter.jpg" title="typewriter" width="700px"/>
+
+
+  <br/>
+  <img src="./media/tagline.png" title="typewriter" width="600px"/>
+
+  <br/>
+  <br/>
+  <a href="https://travis-ci.org/dawsbot/typewriter">
+    <img src="https://travis-ci.org/dawsbot/typewriter.svg?branch=master">
+  </a>
+  <a href="https://www.npmjs.com/package/skrub-cli">
+    <img src="https://img.shields.io/npm/v/skrub-cli.svg">
+  </a>
+
 </p>
 
 ## Install
