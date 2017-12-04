@@ -17,14 +17,19 @@ test('remove all private public ', t => {
   t.is(helpers.removePrivatePublic('public render()'), 'render()');
   t.is(helpers.removePrivatePublic('private helper()'), 'helper()');
 
+  // Multiples in one line
   t.is(helpers.removePrivatePublic('private helper()\nprivate otherHelper()'), 'helper()\notherHelper()');
   t.is(helpers.removePrivatePublic('public helper()\npublic otherHelper()'), 'helper()\notherHelper()');
+  t.is(helpers.removePrivatePublic('public helper()\nprivate otherHelper()'), 'helper()\notherHelper()');
 });
 
 test('interface declaration', t => {
   t.is(helpers.replaceInterfaceDeclaration('interface Props {content}'), 'type Props = {content}');
   t.is(helpers.replaceInterfaceDeclaration('interface Props { content }'), 'type Props = { content }');
   t.is(helpers.replaceInterfaceDeclaration('interface 1Props {content}'), 'type 1Props = {content}');
+
+  // Multiples in one line
+  t.is(helpers.replaceInterfaceDeclaration('interface Props {content}\ninterface OtherProps {other-content}'), 'type Props = {content}\ntype OtherProps = {other-content}');
 });
 
 test('type import', t => {

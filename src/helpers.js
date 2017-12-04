@@ -21,16 +21,17 @@ const removePrivatePublic = fileContents => {
 // "interface Prop {}"" -> "type Prop = {}"
 const replaceInterfaceDeclaration = fileContents => {
   const replacer = (_, interfaceName) => `type ${interfaceName} = `;
+  const reg = new RegExp(/interface\s+(\w*)\s+/, 'g');
   return fileContents
-    .replace(/interface\s+(\w*)\s+/, replacer);
+    .replace(reg, replacer);
 };
 
 // "import {Prop} from './types'"" -> "import type {Prop} from './types'"
 const replaceTypeImport = fileContents => {
   const replacer = (_, beforeEquals, afterEquals) => `${beforeEquals}type ${afterEquals}`;
+  const reg = new RegExp(/(import )(.*\/types(.tsx?)?['"/].*)/, 'g');
   return fileContents
-    .replace(/(import )(.*\/types(.tsx?)?['"/].*)/, replacer);
-    // .replace(/import (.*types)['"]/, replacer);
+    .replace(reg, replacer);
 };
 
 module.exports = {
