@@ -25,9 +25,18 @@ const replaceInterfaceDeclaration = fileContents => {
     .replace(/interface\s+(\w*)\s+/, replacer);
 };
 
+// "import {Prop} from './types'"" -> "import type {Prop} from './types'"
+const replaceTypeImport = fileContents => {
+  const replacer = (_, beforeEquals, afterEquals) => `${beforeEquals}type ${afterEquals}`;
+  return fileContents
+    .replace(/(import )(.*\/types(.tsx?)?['"\/].*)/, replacer);
+    // .replace(/import (.*types)['"]/, replacer);
+};
+
 module.exports = {
   renameFile,
   addFlowHeader,
   removePrivatePublic,
-  replaceInterfaceDeclaration
+  replaceInterfaceDeclaration,
+  replaceTypeImport
 };
