@@ -26,3 +26,29 @@ test('interface declaration', t => {
   t.is(helpers.replaceInterfaceDeclaration('interface Props { content }'), 'type Props = { content }');
   t.is(helpers.replaceInterfaceDeclaration('interface 1Props {content}'), 'type 1Props = {content}');
 });
+
+test('type import', t => {
+  // Alter type import
+  t.is(
+    helpers.replaceTypeImport(`import {Prop} from './types'`),
+    `import type {Prop} from './types'`
+  );
+  t.is(
+    helpers.replaceTypeImport(`import {Prop} from './types.ts'`),
+    `import type {Prop} from './types.ts'`
+  );
+  t.is(
+    helpers.replaceTypeImport(`import {Prop} from "./types"`),
+    `import type {Prop} from "./types"`
+  );
+  t.is(
+    helpers.replaceTypeImport(`import {Prop} from "./types/typeA"`),
+    `import type {Prop} from "./types/typeA"`
+  );
+
+  // Dont alter normal imports (non "types" file)
+  t.is(
+    helpers.replaceInterfaceDeclaration('import {Prop} from \'./not-types\''),
+    'import {Prop} from \'./not-types\''
+  );
+});

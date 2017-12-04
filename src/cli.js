@@ -5,15 +5,22 @@ const typewriter = require('.');
 
 const cli = meow(`
 	Usage
-	  $ typewriter [file path]
+    $ typewriter <path|glob> [...]
 
 	Examples
-    $ typewriter a.tsx
-    ✔ Converted a.tsx -> a.jsx
+    $ typewriter index.ts
+    ✔ Converted index.ts -> index.js
 
-    $ typewriter dir
-    ✔ Converted dir/a.tsx -> dir/a.jsx
-    ✔ Converted dir/b.ts -> dir/b.js
+    $ typewriter src
+    ✔ Converted src/index.ts -> src/index.js
+    ✔ Converted src/App.tsx -> src/App.jsx
+
+    # ignore node_modules
+
+    $ typewriter * '!node_modules/*'
+    ✔ Converted src/index.ts -> src/index.js
+    ✔ Converted src/App.tsx -> src/App.jsx
+    ✔ Converted index.ts -> index.js
 `);
 
 const args = cli.input;
