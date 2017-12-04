@@ -26,7 +26,7 @@ Adopt Flow instantly with **TypeWriter**.
 
 <br/>
 
-🔧 *There is minor manual work after running TypeWriter. If see any room for improvement, please create an issue or contribute!*
+🔧 *There is minor manual work after running TypeWriter. If you see any room for improvement, please create an issue or contribute!*
 
 <br/>
 
