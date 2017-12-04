@@ -6,15 +6,29 @@
   <img src="./media/tagline.png" title="typewriter" width="600px"/>
 
   <br/>
-  <br/>
+  <!-- badges -->
+  <img src="https://img.shields.io/badge/Node-%3E%3Dv4.0.0-ff69b4.svg">
   <a href="https://travis-ci.org/dawsbot/typewriter">
     <img src="https://travis-ci.org/dawsbot/typewriter.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/tw-cli">
     <img src="https://img.shields.io/npm/v/tw-cli.svg">
   </a>
-
 </p>
+
+<br/>
+
+🎉 Using TypeScript is fun, but Flow is even better. The typing systems are similar, but the community is quickly supporting Flow more and more. With this increase in activity, many companies are doubling down on Flow (Facebook and Uber to name a few).
+
+Adopt Flow instantly with **TypeWriter**.
+
+⚡️ Tell **TypeWriter** which files you would like converted and it will automatically perform a [big list of codemods](#default-codemods) instantly!
+
+<br/>
+
+🔧 *There is minor manual work after running TypeWriter. If you see any room for improvement, please create an issue or contribute!*
+
+<br/>
 
 ## Install
 
@@ -25,60 +39,80 @@ $ npm install --global tw-cli
 ## Usage
 
 ```
-$ typewriter index.tsx
-✔ Converted index.tsx -> index.jsx
-
 $ typewriter src
-✔ Converted src/index.tsx -> src/index.jsx
+✔ Converted src/index.ts -> src/index.js
 ✔ Converted src/App.tsx -> src/App.jsx
-
-$ typewriter src index.tsx
-✔ Converted src/index.tsx -> src/index.jsx
-✔ Converted src/App.tsx -> src/App.jsx
-✔ Converted index.tsx -> index.jsx
 ```
 
-## Feature Tracker
+[See more examples](#more-help)
 
-#### Ready To Use
+## Default Codemods
 
 - [x] Rename files from `.ts` -> `.js` & `.tsx` -> `.jsx`
 ```
   a.ts -> a.js
   a.tsx -> a.jsx
 ```
+
+<br/>
+
 - [x] Add flow keyword quote (`// @flow`)
 ```
   "content" -> "// @flow\ncontent"
 ```
+
+<br/>
 
 - [x] Strip `public` and `private` keywords
 ```
   "public render()" -> "render()"
 ```
 
+<br/>
+
 - [x] Interface -> type
 ```
   "interface Prop {}" -> "type Prop = {}"
 ```
 
-#### Soon But Not Yet
+<br/>
 
-- [ ] Named imports
+- [x] Type imports
+
+* *ensure your types are in `types` or `types/*`*
 
 ```
-import { IStore, IUser } from '../../configureStore';
-  ^^^^^ Named import from module `../../configureStore`. `IUser` is a type, but not a value. In order to import it, please use `import type`.
+// imports from types change
+// "import {Prop} from './types'" -> "import type {Prop} from './types'"
+
+// imports from everywhere else are left alone
+// "import {NotProp} from './not-types'" -> "import {NotProp} from './not-types'"
 ```
-
-- [ ] Convert function argument syntax from TS -> Flow
-- [ ] Convert interface definitions from TS -> Flow
-
 
 ## More Help
 
 ```
 $ typewriter --help
+
+  TypeScript -> Flow Converter
+
+  Usage
+     $ typewriter <path|glob> [...]
+
+  Examples
+     $ typewriter index.ts
+     ✔ Converted index.ts -> index.js
+
+     $ typewriter src
+     ✔ Converted src/index.ts -> src/index.js
+     ✔ Converted src/App.tsx -> src/App.jsx
+
+     # ignore node_modules
+
+     $ typewriter * '!node_modules/*'
+     ✔ Converted src/index.ts -> src/index.js
+     ✔ Converted src/App.tsx -> src/App.jsx
+     ✔ Converted index.ts -> index.js
 ```
 
 ## Support Development
