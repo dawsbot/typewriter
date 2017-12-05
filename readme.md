@@ -7,7 +7,7 @@
 
   <br/>
   <!-- badges -->
-  <img src="https://img.shields.io/badge/Node-%3E%3Dv4.0.0-ff69b4.svg">
+  <img src="https://img.shields.io/badge/Node-%3E%3Dv4-ff69b4.svg">
   <a href="https://travis-ci.org/dawsbot/typewriter">
     <img src="https://travis-ci.org/dawsbot/typewriter.svg?branch=master">
   </a>
