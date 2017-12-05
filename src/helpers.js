@@ -34,10 +34,18 @@ const replaceTypeImport = fileContents => {
     .replace(reg, replacer);
 };
 
+const removeReadonly = fileContents => {
+  const replacer = (_, whitespace, restOfLine) => `${whitespace}${restOfLine}`;
+  const reg = new RegExp(/^(\s)*readonly (.*)/, 'g');
+  return fileContents
+    .replace(reg, replacer);
+}
+
 module.exports = {
   renameFile,
   addFlowHeader,
   removePrivatePublic,
   replaceInterfaceDeclaration,
-  replaceTypeImport
+  replaceTypeImport,
+  removeReadonly
 };

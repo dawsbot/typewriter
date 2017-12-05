@@ -57,3 +57,7 @@ test('type import', t => {
     'import {Prop} from \'./not-types\''
   );
 });
+
+test('remove readonly', t => {
+  t.is(helpers.removeReadonly('readonly prop'), 'prop');
+});
