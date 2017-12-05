@@ -21,7 +21,7 @@ const removePrivatePublic = fileContents => {
 // "interface Prop {}"" -> "type Prop = {}"
 const replaceInterfaceDeclaration = fileContents => {
   const replacer = (_, interfaceName) => `type ${interfaceName} = `;
-  const reg = new RegExp(/interface\s+(\w*)\s+/, 'g');
+  const reg = new RegExp(/interface\s+(\w*)\s+/g);
   return fileContents
     .replace(reg, replacer);
 };
@@ -29,7 +29,7 @@ const replaceInterfaceDeclaration = fileContents => {
 // "import {Prop} from './types'"" -> "import type {Prop} from './types'"
 const replaceTypeImport = fileContents => {
   const replacer = (_, beforeEquals, afterEquals) => `${beforeEquals}type ${afterEquals}`;
-  const reg = new RegExp(/(import )(.*\/types(.tsx?)?['"/].*)/, 'g');
+  const reg = new RegExp(/(import )(.*\/types(.tsx?)?['"/].*)/g);
   return fileContents
     .replace(reg, replacer);
 };
