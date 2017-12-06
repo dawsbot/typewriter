@@ -34,12 +34,10 @@ const replaceTypeImport = fileContents => {
     .replace(reg, replacer);
 };
 
+// "readonly prop" -> "prop"
 const removeReadonly = fileContents => {
   const replacer = (_, whitespace, restOfLine) => {
-    if (whitespace === undefined) {
-      whitespace = '';
-    }
-    return `${whitespace}${restOfLine}`;
+    return `${whitespace || ''}${restOfLine}`;
   };
   const reg = new RegExp(/^(\s*)readonly (.*)/g);
   return fileContents
