@@ -59,5 +59,10 @@ test('type import', t => {
 });
 
 test('remove readonly', t => {
+  // Should remove "readonly" keyword
   t.is(helpers.removeReadonly('readonly prop'), 'prop');
+  t.is(helpers.removeReadonly('  readonly prop'), '  prop');
+
+  // Should not alter readonly which does not start the line
+  t.is(helpers.removeReadonly('const readonly;'), 'const readonly;');
 });
