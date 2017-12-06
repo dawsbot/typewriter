@@ -50,7 +50,15 @@ test('type import', t => {
     helpers.replaceTypeImport(`import {Prop} from "./types/typeA"`),
     `import type {Prop} from "./types/typeA"`
   );
+  t.is(
+    helpers.replaceTypeImport(`import {Prop} from "../interfaces/typeA"`),
+    `import type {Prop} from "../interfaces/typeA"`
+  );
+  t.is(
+    helpers.replaceTypeImport(`import {Prop} from "../interface/typeA"`),
+    `import type {Prop} from "../interface/typeA"`
 
+  );
   // Dont alter normal imports (non "types" file)
   t.is(
     helpers.replaceInterfaceDeclaration('import {Prop} from \'./not-types\''),

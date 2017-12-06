@@ -12,10 +12,12 @@ const convertFile = fileName => {
   const fileContent = fs.readFileSync(fileName);
 
   const newFileContent =
-    helpers.replaceTypeImport(
-      helpers.replaceInterfaceDeclaration(
-        helpers.removePrivatePublic(
-          helpers.addFlowHeader(fileContent)
+    helpers.removeReadonly(
+      helpers.replaceTypeImport(
+        helpers.replaceInterfaceDeclaration(
+          helpers.removePrivatePublic(
+            helpers.addFlowHeader(fileContent)
+          )
         )
       )
     );

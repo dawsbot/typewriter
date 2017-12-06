@@ -86,7 +86,7 @@ $ typewriter src
 
 - [x] Type imports
 
-* *ensure your types are in `types` or `types/*`*
+* *ensure your types are in `types`, `types/*`, `interface/*`, or `interfaces/*`*
 
 ```
 // imports from types change
