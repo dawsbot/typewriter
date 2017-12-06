@@ -1,7 +1,6 @@
 <p align="center">
   <img src="./media/typewriter.jpg" title="typewriter"/>
 
-
   <br/>
   <img src="./media/tagline.png" title="typewriter" width="600px"/>
 
@@ -18,15 +17,21 @@
 
 <br/>
 
-🎉 Using TypeScript is fun, but Flow is even better. The typing systems are similar, but the community is quickly supporting Flow more and more. With this increase in activity, many companies are doubling down on Flow (Facebook and Uber to name a few).
+🎉 Using TypeScript is fun, but [Flow](https://flow.org/) is even better. The typing systems are similar, but the community is quickly supporting Flow for React. Take React Native for example, Flow is supported by default while TypeScript is a nightmare to configure (think `/build` dir, hot reloading, and concurrent typescript compilation separate from babel).
 
-Adopt Flow instantly with **TypeWriter**.
-
-⚡️ Tell **TypeWriter** which files you would like converted and it will automatically perform a [big list of codemods](#default-codemods) instantly!
+With this increase in open-source effort, many companies are doubling down on Flow (Facebook, Uber, etc.).
 
 <br/>
+<p align="center">
+  <b>
+  Adopt Flow instantly with TypeWriter.
+  </b>
+</p>
+<br/>
 
-🔧 *There is minor manual work after running TypeWriter. If you see any room for improvement, please create an issue or contribute!*
+⚡️ Tell **TypeWriter** which files you care about, and it will run a [big list of codemods](#default-codemods) instantly!
+
+🔧 *There is minor manual work after running TypeWriter. If you see room for improvement, [create an issue](https://github.com/dawsbot/typewriter/issues/new)!*
 
 <br/>
 
@@ -46,7 +51,9 @@ $ typewriter src
 
 [See more examples](#more-help)
 
-## Default Codemods
+<br/>
+
+## Codemods Included
 
 - [x] Rename files from `.ts` -> `.js` & `.tsx` -> `.jsx`
 ```
@@ -63,14 +70,14 @@ $ typewriter src
 
 <br/>
 
-- [x] Strip `public` and `private` keywords
+- [x] Remove `public` and `private` keywords
 ```
   "public render()" -> "render()"
 ```
 
 <br/>
 
-- [x] Interface -> type
+- [x] `interface` -> `type`
 ```
   "interface Prop {}" -> "type Prop = {}"
 ```
@@ -88,6 +95,26 @@ $ typewriter src
 // imports from everywhere else are left alone
 // "import {NotProp} from './not-types'" -> "import {NotProp} from './not-types'"
 ```
+
+<br/>
+
+- [x] Remove `readonly`
+
+Before:
+```js
+{
+  "readonly color: string"
+}
+```
+
+After:
+```js
+{
+  "color: string"
+}
+```
+
+<br/>
 
 ## More Help
 
