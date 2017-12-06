@@ -103,14 +103,14 @@ $ typewriter src
 Before:
 ```js
 {
-  "readonly color: string"
+  readonly color: string
 }
 ```
 
 After:
 ```js
 {
-  "color: string"
+  color: string
 }
 ```
 
