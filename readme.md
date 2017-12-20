@@ -31,6 +31,8 @@ With this increase in open-source effort, many companies are doubling down on Fl
 
 ⚡️ Tell **TypeWriter** which files you care about, and it will run a [big list of codemods](#default-codemods) instantly!
 
+⚠️ This is early stage software. There will be bugs. Please help improve it by using this and reporting issues ⚠️ 
+
 🔧 *There is minor manual work after running TypeWriter. If you see room for improvement, [create an issue](https://github.com/dawsbot/typewriter/issues/new)!*
 
 <br/>
