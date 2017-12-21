@@ -44,11 +44,17 @@ const removeReadonly = fileContents => {
     .replace(reg, replacer);
 };
 
+// - [ ] `JSX.Element` -> `React.Node`
+const replaceJSXElement = fileContents => {
+  return fileContents.replace('JSX.Element', 'React.Node');
+};
+
 module.exports = {
   renameFile,
   addFlowHeader,
   removePrivatePublic,
   replaceInterfaceDeclaration,
   replaceTypeImport,
-  removeReadonly
+  removeReadonly,
+  replaceJSXElement
 };
