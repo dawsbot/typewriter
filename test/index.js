@@ -7,7 +7,7 @@ import globby from 'globby';
 
 import typewriter from '../src/index';
 
-const testFixturePath = path.join(__dirname, 'fixtures');
+const testFixturePath = path.join(__dirname, 'fixtures', 'easy');
 const oldFixtureFileContent = fs.readFileSync(
   path.join(testFixturePath, 'a.ts'), 'utf8'
 );

@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "ava": "^0.20.0",
+    "execa": "^0.8.0",
     "temp-dir-cp": "^1.0.1",
     "xo": "^0.18.2"
   },
