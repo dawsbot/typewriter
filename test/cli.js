@@ -32,5 +32,5 @@ test('happy path', async t => {
 
   // Input and output are not equal
   t.not(inputContent, expectedOutputContent);
-  t.is(actualOutputContent, expectedOutputFilePath);
+  t.is(actualOutputContent, expectedOutputContent);
 });

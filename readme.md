@@ -116,7 +116,7 @@ After:
 
 <br/>
 
-- [ ] `JSX.Element` -> `React.Node`
+- [x] `JSX.Element` -> `React.Node`
 
 In prop typings for TypeScript, a react element is called `JSX.Element` while in Flow this is `React.Node`.
 
