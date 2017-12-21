@@ -74,3 +74,8 @@ test('remove readonly', t => {
   // Should not alter readonly which does not start the line
   t.is(helpers.removeReadonly('const readonly;'), 'const readonly;');
 });
+
+test('Replace JSX.Element', t => {
+  t.is(helpers.replaceJSXElement(':JSX.Element'), ':React.Node', 'should replace');
+  t.is(helpers.replaceJSXElement(':jsx.Element'), ':jsx.Element', 'should not replace');
+});
